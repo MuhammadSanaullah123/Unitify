@@ -1,0 +1,1204 @@
+:root {
+  --primary: #e94b41; //primary color
+  --secondary: #2683ff; // secondary color
+}
+/*---------------------------- CSS CODE START FOR USER:LOGIN PAGE----------------- */
+/***********************************************************************************/
+.line {
+  background: linear-gradient(
+    90deg,
+    rgba(155, 171, 191, 0) 1.04%,
+    #9babbf 51.56%,
+    rgba(155, 171, 191, 0) 100%
+  );
+  width: 95%;
+  height: 1.5px;
+  margin-bottom: 15px;
+}
+.mainloginDiv {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  .bigDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 528px;
+
+    @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+      width: 428px;
+    }
+    @media (max-width: 540px) {
+      width: 85%;
+    }
+    @media (max-width: 480px) {
+      width: 95%;
+    }
+    .circleDiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 60px;
+      padding: 30px;
+      margin: 0 auto;
+      border-radius: 50%;
+      box-shadow: 0px -20px 20px rgb(0 0 0 / 8%);
+      background-color: white;
+      z-index: 99;
+      .circleDiv2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 108px;
+        height: 108px;
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        z-index: 999;
+        @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+          width: 95px;
+          height: 95px;
+        }
+        @media (max-width: 540px) {
+          width: 90px;
+          height: 90px;
+        }
+        .circleDiv2pic {
+          filter: invert(46%) sepia(68%) saturate(2830%) hue-rotate(332deg)
+            brightness(91%) contrast(102%);
+
+          @media (max-width: 540px) {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+      @media (max-width: 540px) {
+        padding: 22px;
+      }
+      @media (max-width: 320px) {
+        padding: 20px;
+      }
+    }
+
+    .smallDiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 528px;
+      // height: 356px;
+      background: #ffffff;
+      box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      border-radius: 6px;
+      justify-content: space-evenly;
+      padding-top: 50px;
+      @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+        width: 428px;
+      }
+      @media (max-width: 540px) {
+        width: 100%;
+      }
+
+      .input-container {
+        display: flex;
+        width: 426px;
+        height: 58px;
+        background: #ebeaea;
+        border-radius: 5px;
+        margin: 10px 0;
+        @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+          width: 350px;
+          height: 43px;
+        }
+        @media (max-width: 540px) {
+          width: 85%;
+        }
+        .inputimgback {
+          display: flex;
+          background-color: var(--primary);
+          align-items: center;
+          justify-content: center;
+          width: 54px;
+          height: 58px;
+          border-radius: 5px 0px 0px 5px;
+          @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+            height: 43px;
+            width: 50px;
+          }
+        }
+        .inputimg {
+          width: 38px;
+          height: 38px;
+        }
+        .input-field {
+          width: 100%;
+          background: #ebeaea;
+          border: 0px;
+          font-size: 20px;
+          font-family: "Inter";
+          @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+            font-size: 17px;
+          }
+          padding-left: 15px;
+        }
+        .input-field:focus {
+          outline: none;
+        }
+        ::placeholder {
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 20px;
+          color: #937a7a;
+          //   padding-left: 30px;
+          @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+            font-size: 17px;
+          }
+        }
+      }
+      .check-container {
+        display: flex;
+        width: 426px;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        align-items: center;
+        margin-top: 10px;
+
+        @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+          width: 350px;
+        }
+        @media (max-width: 540px) {
+          width: 85%;
+        }
+        .form-check-input {
+          height: 14px;
+          width: 14px;
+        }
+        .checkp {
+          font-family: "Inter";
+          font-weight: 300;
+          font-size: 13px;
+          color: #464646;
+          margin-top: 0;
+          margin-left: 8px;
+          margin-bottom: 0;
+        }
+        .checkp2 {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          color: var(--primary);
+          text-decoration: none;
+        }
+        .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+        .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+  .l1 {
+    text-decoration: none;
+  }
+  .btn1 {
+    width: 198px;
+    height: 59px;
+    background: var(--primary);
+    color: #ffffff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    box-shadow: 0px 0px 7px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+      width: 170px !important;
+    }
+  }
+  .mainDivp1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: #473d3d;
+  }
+  .mainimgDiv {
+    display: flex;
+    width: 150px;
+    margin-bottom: 50px;
+    justify-content: space-around;
+    .imgDiv {
+      width: 62px;
+      height: 50px;
+      background: #c54238;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+        width: 52px !important;
+        height: 40px !important;
+      }
+      .endimg {
+        width: 32px;
+        height: 32px;
+        @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+          width: 25px !important;
+          height: 25px !important;
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------- CSS CODE END FOR USER:LOGIN PAGE-------------------------- */
+
+/*---------------------------- CSS CODE START FOR USER:SIGNUP PAGE----------------- */
+/***********************************************************************************/
+.mainsignupDiv {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .bigDivS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 528px;
+    height: 548px;
+    background: #ffffff;
+    @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+      width: 428px;
+      height: 500px;
+    }
+    @media (max-width: 540px) {
+      width: 95%;
+    }
+    .circleDiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 60px;
+      padding: 30px;
+      margin: 0 auto;
+      border-radius: 50%;
+      box-shadow: 0px -20px 20px rgb(0 0 0 / 8%);
+      background-color: white;
+      z-index: 99;
+      @media (max-width: 400px) {
+        padding: 25px;
+      }
+      .circleDiv2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 108px;
+        height: 108px;
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        z-index: 999;
+        @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+          width: 95px;
+          height: 95px;
+        }
+        @media (max-width: 540px) {
+          width: 90px;
+          height: 90px;
+        }
+        @media (max-width: 400px) {
+          width: 80px;
+          height: 80px;
+        }
+        .circleDiv2pic {
+          filter: invert(46%) sepia(68%) saturate(2830%) hue-rotate(332deg)
+            brightness(91%) contrast(102%);
+
+          @media (max-width: 540px) {
+            width: 60px;
+            height: 60px;
+          }
+        }
+      }
+    }
+
+    .smallDivS {
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 528px;
+      height: 370px;
+      background: #ffffff;
+      box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+      z-index: 2;
+      border-radius: 6px;
+      justify-content: space-evenly;
+      @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+        width: 428px;
+        height: 270px;
+
+        justify-content: space-between;
+      }
+      @media (max-width: 1000px) {
+        padding-top: 50px;
+      }
+      @media (max-width: 540px) {
+        width: 100%;
+        padding-top: 45px;
+      }
+
+      .input-container {
+        display: flex;
+        width: 426px;
+        height: 58px;
+        background: #ebeaea;
+        border-radius: 5px;
+        @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+          width: 350px;
+          height: 43px;
+        }
+        @media (max-width: 540px) {
+          width: 90%;
+        }
+        @media (max-width: 500px) {
+          width: 90%;
+          height: 43px;
+        }
+        .inputimgback {
+          display: flex;
+          background-color: var(--primary);
+          align-items: center;
+          justify-content: center;
+          width: 54px;
+          height: 58px;
+          border-radius: 5px 0px 0px 5px;
+          @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+            height: 43px;
+            width: 50px;
+          }
+          @media (max-width: 500px) {
+            height: 43px;
+          }
+        }
+        .inputimg {
+          width: 38px;
+          height: 38px;
+        }
+        .input-field {
+          width: 100%;
+          background: #ebeaea;
+          border: 0px;
+          font-size: 16px;
+          padding-left: 15px;
+          font-family: "Inter";
+        }
+        .input-field:focus {
+          outline: none;
+        }
+        ::placeholder {
+          font-family: "Inter";
+          font-weight: 400;
+          font-size: 16px;
+          color: #937a7a;
+          //  padding-left: 30px;
+        }
+      }
+      .check-container {
+        display: flex;
+        width: 426px;
+        align-items: center;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 1400px) and (min-width: 1000px) {
+          width: 350px;
+          height: 43px;
+        }
+        @media (max-width: 540px) {
+          width: 90%;
+        }
+
+        .form-check-input {
+          height: 14px;
+          width: 14px;
+        }
+        .checkpS {
+          font-family: "Inter";
+          font-weight: 300;
+          font-size: 13px;
+          color: #464646;
+          margin-top: 0;
+          margin-left: 8px;
+          display: flex;
+        }
+        .checkp2 {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          color: var(--primary);
+          text-decoration: none;
+        }
+        .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+        .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+          color: var(--primary);
+        }
+      }
+      .smallDivp {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        color: var(--secondary);
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+  .btn1 {
+    width: 198px;
+    height: 59px;
+    background: var(--primary);
+    color: #ffffff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    box-shadow: 0px 0px 7px;
+    border-radius: 4px;
+    border: 0;
+  }
+  .mainDivp1 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color: #473d3d;
+  }
+  .mainimgDiv {
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+    .imgDiv {
+      width: 62px;
+      height: 50px;
+      background: #c54238;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .endimg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
+.SignBoxp {
+  width: 139px;
+  height: 30px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.SignBoxb1 {
+  width: 191px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 3px;
+  border: 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--primary);
+  cursor: pointer;
+}
+.SignBoxb2 {
+  width: 191px;
+  height: 48px;
+  background: var(--primary);
+  border-radius: 3px;
+  border: 1px solid #ffffff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/*---------------------------- CSS CODE END FOR USER:SIGNUP PAGE-------------------------- */
+
+/*---------------------------- CSS CODE START FOR USER:TERMSCONDITIONS PAGE----------------- */
+/***********************************************************************************/
+.termDiv {
+  // width: 95%;
+  // margin: 0 auto;
+
+  .h6tag {
+    color: var(--primary);
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .ptag {
+    font-family: "Inter";
+    color: #000000;
+    font-style: normal;
+    font-size: 17px;
+    margin-top: 10px;
+  }
+}
+/*---------------------------- CSS CODE END FOR USER:TERMSCONDITIONS PAGE-------------------- */
+
+/*---------------------------- CSS CODE START FOR USER:HOME PAGE----------------- */
+/**********************************************************************************************/
+.Home {
+  .homed1 {
+    background-image: url("./assets/backgroundimg.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 25%);
+    height: 500px;
+    padding: 0 20px 0 20px;
+  }
+  .homed2 {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+    .homed1h1 {
+      font-family: "Inter";
+      font-size: 40px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 1.2em;
+      margin-top: 0;
+      @media (max-width: 710px) {
+        font-size: 35px;
+      }
+      @media (max-width: 600px) {
+        font-size: 40px;
+      }
+      @media (max-width: 480px) {
+        font-size: 35px;
+      }
+    }
+    .homed1d1b1 {
+      width: 200px;
+      height: 60px;
+      font-family: "Inter";
+      font-size: 25px;
+      font-weight: 700;
+      color: #000000;
+      border: 3px solid #000;
+      border-radius: 12px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  .homelandingimg {
+    width: 450px;
+    height: 450px;
+    @media (max-width: 915px) {
+      width: 350px;
+      height: 350px;
+    }
+    @media (max-width: 810px) {
+      width: 250px;
+      height: 250px;
+    }
+    @media (max-width: 710px) {
+      width: 200px;
+      height: 200px;
+    }
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  .homed3 {
+    padding: 100px 0 50px 0;
+    //background-color: #e4dede4d;
+    //background-color: #ff6a0017;
+    background-image: url("./assets/backlinepic.png");
+    background-repeat: round;
+    .react-multi-carousel-list {
+      width: 90%;
+      align-self: center;
+      margin: 0 auto;
+      align-items: center;
+      .react-multi-carousel-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .carousel-button-group {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-self: center;
+      position: relative;
+      bottom: 190px;
+
+      @media (max-width: 400px) {
+        bottom: 160px;
+      }
+      @media (max-width: 465px) {
+        width: 100% !important;
+        svg {
+          width: 40px !important;
+        }
+      }
+    }
+  }
+  .homed4 {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 50px !important;
+    .homed4h1 {
+      font-family: "Inter";
+      font-size: 25px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+      color: var(--primary);
+    }
+    .homed5 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: 1.5em;
+      justify-items: center;
+      @media (max-width: 1275px) {
+        grid-row-gap: 4em;
+      }
+      @media (max-width: 1030px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 685px) {
+        grid-template-columns: 1fr;
+      }
+      .homed6 {
+        width: 400px;
+        height: 300px;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: rgb(0 0 0 / 18%) 0px 4px 8px;
+        @media (max-width: 1275px) and (min-width: 1030px) {
+          width: 320px;
+          height: 250px;
+        }
+        @media (max-width: 850px) and (min-width: 685px) {
+          width: 320px;
+          height: 250px;
+        }
+        @media (max-width: 415px) {
+          width: 300px;
+          height: 300px;
+        }
+        .homed4h2 {
+          font-family: "Inter";
+          font-size: 20px;
+          font-weight: 500;
+          align-self: center;
+          margin: 0 0 15px 0;
+        }
+        .homed6img {
+          min-width: 400px;
+          height: 250px;
+          border-radius: 12px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          @media (max-width: 1275px) and (min-width: 1030px) {
+            min-width: 300px;
+            height: 200px;
+          }
+          @media (max-width: 850px) and (min-width: 685px) {
+            min-width: 300px;
+            height: 200px;
+          }
+          @media (max-width: 415px) {
+            min-width: 300px;
+            height: 250px;
+          }
+        }
+      }
+      .homed6:hover {
+        transform: scale(1.05);
+        opacity: 0.85;
+        border: 2px solid var(--primary);
+        transition: 0.1s;
+      }
+    }
+  }
+}
+/*---------------------------- CSS CODE END FOR USER:HOME PAGE----------------------------- */
+
+/*---------------------------- CSS CODE START FOR USER:ProductCard Component----------------- */
+/**********************************************************************************************/
+
+.productcardd1 {
+  width: 320px;
+  height: 320px;
+  background-repeat: no-repeat;
+  background-size: 322px 322px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  cursor: pointer;
+
+  @media (max-width: 400px) {
+    width: 280px;
+    height: 280px;
+    background-size: 280px 280px;
+  }
+  @media (max-width: 340px) {
+    width: 250px;
+    height: 250px;
+    background-size: 250px 250px;
+  }
+  .productcardd2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding: 10px;
+    .productcardh1 {
+      font-family: "Inter";
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+      @media (max-width: 340px) {
+        font-size: 17px;
+      }
+    }
+    .productcardp1 {
+      font-family: "Inter";
+      font-size: 20px;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+      color: #ffffff;
+      @media (max-width: 340px) {
+        font-size: 17px;
+      }
+    }
+  }
+}
+.productcardd1:hover {
+  //transform: scale(0.985);
+  // opacity: 0.8;
+  border: 3px solid var(--primary);
+  transition: 0.1s;
+}
+/*---------------------------- CSS CODE END FOR USER:ProductCard Component-------------------- */
+
+/*---------------------------- CSS CODE START FOR USER:ProductList PAGE---------------------- */
+/**********************************************************************************************/
+.productlist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+
+  padding: 10px;
+  @media (max-width: 845px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 0;
+  }
+  .productlistd1 {
+    display: flex;
+    grid-column: 1/5;
+    width: 250px;
+    justify-self: right;
+    @media (max-width: 400px) {
+      width: 90%;
+      justify-self: center;
+    }
+    .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
+    .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+      color: var(--primary);
+      opacity: 0.7;
+      font-family: "Inter";
+    }
+    .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+      border-radius: 10px;
+      border: 1px solid var(--primary);
+    }
+    .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused
+      .MuiOutlinedInput-notchedOutline {
+      border-color: transparent;
+    }
+  }
+  .productlistd2 {
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px 5px rgb(155 171 191 / 30%);
+    grid-column: 1/2;
+    padding: 15px 0 0 15px;
+    min-width: 250px;
+    .productlistd2h1 {
+      font-family: "Inter";
+      font-size: 22px;
+      margin: 0 0 20px 0;
+    }
+    @media (max-width: 845px) {
+      display: none;
+    }
+  }
+  .productlistd2mobile {
+    display: flex;
+    justify-content: center;
+    grid-column: 1/5;
+    @media (min-width: 845px) {
+      display: none;
+    }
+    .productlistd2mobilebtn {
+      width: 90%;
+      height: 60px;
+      border: 1px solid var(--primary);
+      border-radius: 6px;
+      cursor: pointer;
+      @media (max-width: 645px) and (min-width: 500px) {
+        width: 350px;
+        background-size: 350px 350px;
+      }
+      @media (max-width: 500px) {
+        width: 95%;
+        background-size: 350px 350px;
+      }
+    }
+    .menupic {
+      color: var(--primary);
+      font-size: 2.5em;
+    }
+    .productlistd2mobilep {
+      font-family: "Inter";
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+      color: #000000;
+      text-transform: none;
+    }
+  }
+  .line {
+    background: linear-gradient(
+      90deg,
+      rgba(155, 171, 191, 0) 1.04%,
+      #9babbf 51.56%,
+      rgba(155, 171, 191, 0) 100%
+    );
+    width: 95%;
+    height: 1.5px;
+    margin-bottom: 15px;
+  }
+  .productlistcheckboxdiv {
+    display: flex;
+    align-items: center;
+    .productlistcheckboxp {
+      margin: 0;
+      font-family: "Inter";
+    }
+    .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+    .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+      color: var(--primary);
+    }
+  }
+  .productlistd3 {
+    grid-column: 2/5;
+    display: grid;
+    grid-row-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    @media (max-width: 1110px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 845px) {
+      grid-column: 1/4;
+    }
+    @media (max-width: 645px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+.productlistd2 {
+  //box-shadow: 0px 10px 20px 5px rgb(155 171 191 / 30%);
+  padding: 15px 0 0 15px;
+  .productlistd2h1 {
+    font-family: "Inter";
+    font-size: 22px;
+    margin: 0 0 20px 0;
+  }
+}
+.productlistcheckboxdiv {
+  display: flex;
+  align-items: center;
+  .productlistcheckboxp {
+    margin: 0;
+    font-family: "Inter";
+  }
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+    color: var(--primary);
+  }
+}
+.line {
+  background: linear-gradient(
+    90deg,
+    rgba(155, 171, 191, 0) 1.04%,
+    #9babbf 51.56%,
+    rgba(155, 171, 191, 0) 100%
+  );
+  width: 95%;
+  height: 1.5px;
+  margin-bottom: 15px;
+}
+/*---------------------------- CSS CODE END FOR USER:ProductList PAGE----------------------- */
+
+/*---------------------------- CSS CODE START FOR USER:ProductCardList Component----------------- */
+/**********************************************************************************************/
+
+.productcardlistd1 {
+  width: 270px;
+  height: 270px;
+  background-repeat: no-repeat;
+  background-size: 270px 270px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  cursor: pointer;
+
+  @media (max-width: 1110px) {
+    width: 320px;
+    height: 320px;
+    background-size: 320px 320px;
+  }
+  @media (max-width: 960px) {
+    width: 270px;
+    height: 270px;
+    background-size: 270px 270px;
+  }
+  @media (max-width: 845px) {
+    width: 300px;
+    height: 300px;
+    background-size: 300px 300px;
+  }
+  @media (max-width: 645px) {
+    width: 400px;
+    height: 400px;
+    background-size: 400px 400px;
+  }
+  @media (max-width: 420px) {
+    width: 320px;
+    height: 320px;
+    background-size: 320px 320px;
+  }
+  @media (max-width: 340px) {
+    width: 270px;
+    height: 270px;
+    background-size: 270px 270px;
+  }
+  .productcardd2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding: 10px;
+    .productcardh1 {
+      font-family: "Inter";
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+      @media (max-width: 340px) {
+        font-size: 17px;
+      }
+    }
+    .productcardp1 {
+      font-family: "Inter";
+      font-size: 20px;
+      font-weight: 400;
+      margin: 5px 0 0 0;
+      color: #ffffff;
+      @media (max-width: 340px) {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+/*---------------------------- CSS CODE END FOR USER:ProductCardList Component-------------------- */
+
+/*---------------------------- CSS CODE START FOR USER:Product PAGE---------------------- */
+/**********************************************************************************************/
+.product {
+  padding: 20px 30px 10px 30px;
+  display: flex;
+  .productpicdiv {
+    min-width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 502px 502px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    cursor: pointer;
+
+    @media (max-width: 400px) {
+      width: 280px;
+      height: 280px;
+      background-size: 280px 280px;
+    }
+    @media (max-width: 340px) {
+      width: 250px;
+      height: 250px;
+      background-size: 250px 250px;
+    }
+    .productcardd2 {
+      display: flex;
+      flex-direction: column;
+      margin-top: auto;
+      padding: 10px;
+    }
+  }
+  .productd1 {
+    margin-left: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .productcardh1 {
+      font-family: "Inter";
+      font-size: 40px;
+      font-weight: 700;
+      margin: 0;
+      color: var(--primary);
+    }
+    .productcardp1 {
+      font-family: "Inter";
+      font-size: 30px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+    .productd1span1 {
+      width: 250px;
+      height: 55px;
+      background-color: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .productcarddespdiv {
+      border: 1px solid rgb(229, 232, 235);
+      border-radius: 10px;
+      padding: 20px;
+      .productcarddesph1 {
+        font-family: "Inter";
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+      .productcarddespp {
+        font-family: "Inter";
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+  }
+  .productd2 {
+    border: 1px solid rgb(229, 232, 235);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    .productd2btn {
+      height: 55px;
+      width: 220px;
+      font-family: "Inter";
+      font-size: 17px;
+      border: 2px solid var(--primary);
+      background: transparent;
+      border-radius: 8px;
+      color: var(--primary);
+      font-weight: 500;
+      margin-right: 50px;
+    }
+
+    .productd2totaldiv {
+      .productd2totalp {
+        font-family: "Inter";
+        font-size: 25px;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+  }
+}
+.productcarousel {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0 50px 0;
+  margin-top: 50px;
+  //background-color: #e4dede4d;
+  //background-color: #ff6a0017;
+  background-image: url("./assets/backlinepic.png");
+  background-repeat: round;
+  .react-multi-carousel-list {
+    width: 90%;
+    align-self: center;
+    margin: 0 auto;
+    align-items: center;
+    .react-multi-carousel-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .carousel-button-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-self: center;
+    position: relative;
+    bottom: 190px;
+
+    @media (max-width: 400px) {
+      bottom: 160px;
+    }
+    @media (max-width: 465px) {
+      width: 100% !important;
+      svg {
+        width: 40px !important;
+      }
+    }
+  }
+  .productcarouselh1 {
+    align-self: center;
+    font-family: "Inter";
+    font-size: 35px;
+    margin: 0 0 50px 0;
+    color: var(--primary);
+  }
+}
+/*---------------------------- CSS CODE END FOR USER:Product Component-------------------- */
