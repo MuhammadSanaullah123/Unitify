@@ -81,7 +81,7 @@ const Login = () => {
           </div>
         </div>
         <div style={{ marginTop: "35px" }}>
-          <Link className="l1">
+          <Link to="/home" className="l1">
             <button className="btn1">Login</button>
           </Link>
         </div>

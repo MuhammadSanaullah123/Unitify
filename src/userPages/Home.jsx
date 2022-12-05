@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 //assets
 import electronics from "./../assets/electronics.jpg";
 import furniture from "./../assets/furniture.jpg";
@@ -90,8 +90,9 @@ const Home = () => {
             <br />
             <br />
             <br />
-
-            <button className="homed1d1b1">Shop Now</button>
+            <Link to="/productlist">
+              <button className="homed1d1b1">Shop Now</button>
+            </Link>
           </div>
           <img className="homelandingimg" src={landingimg} alt="" />
         </div>
@@ -113,30 +114,42 @@ const Home = () => {
         <div className="homed4">
           <h6 className="homed4h1">Browse by category</h6>
           <div className="homed5">
-            <div className="homed6">
-              <img className="homed6img" src={electronics} alt="" />
-              <h6 className="homed4h2">Electronics Accessories</h6>
-            </div>
-            <div className="homed6">
-              <img className="homed6img" src={fashion} alt="" />
-              <h6 className="homed4h2">Men's Fashion</h6>
-            </div>
-            <div className="homed6">
-              <img className="homed6img" src={cd} alt="" />
-              <h6 className="homed4h2">Software</h6>
-            </div>
-            <div className="homed6">
-              <img className="homed6img" src={tv} alt="" />
-              <h6 className="homed4h2">Television</h6>
-            </div>
-            <div className="homed6">
-              <img className="homed6img" src={toys} alt="" />
-              <h6 className="homed4h2">Toys</h6>
-            </div>
-            <div className="homed6">
-              <img className="homed6img" src={furniture} alt="" />
-              <h6 className="homed4h2">Furniture</h6>
-            </div>
+            <Link to="/productlist" style={{ textDecoration: "none" }}>
+              <div className="homed6">
+                <img className="homed6img" src={electronics} alt="" />
+                <h6 className="homed4h2">Electronics Accessories</h6>
+              </div>
+            </Link>
+            <Link to="/productlist" style={{ textDecoration: "none" }}>
+              <div className="homed6">
+                <img className="homed6img" src={fashion} alt="" />
+                <h6 className="homed4h2">Men's Fashion</h6>
+              </div>
+            </Link>
+            <Link to="/productlist" style={{ textDecoration: "none" }}>
+              <div className="homed6">
+                <img className="homed6img" src={cd} alt="" />
+                <h6 className="homed4h2">Software</h6>
+              </div>
+            </Link>
+            <Link to="/productlist" style={{ textDecoration: "none" }}>
+              <div className="homed6">
+                <img className="homed6img" src={tv} alt="" />
+                <h6 className="homed4h2">Television</h6>
+              </div>
+            </Link>
+            <Link to="/productlist" style={{ textDecoration: "none" }}>
+              <div className="homed6">
+                <img className="homed6img" src={toys} alt="" />
+                <h6 className="homed4h2">Toys</h6>
+              </div>
+            </Link>
+            <Link to="/productlist" style={{ textDecoration: "none" }}>
+              <div className="homed6">
+                <img className="homed6img" src={furniture} alt="" />
+                <h6 className="homed4h2">Furniture</h6>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

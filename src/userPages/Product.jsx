@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //assets
 import headphone from "./../assets/headphone.jpg";
@@ -15,6 +15,8 @@ import "react-multi-carousel/lib/styles.css";
 //mui
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const responsive2 = {
   desktop: {
@@ -57,18 +59,25 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 };
 
 const Product = () => {
+  /*   let primarycolor = useState(
+    getComputedStyle(document.documentElement).getPropertyValue(`--primary`) //getting value of primary var from css
+  ); */
+  const [quantity, setQuantity] = useState(1);
+  const handleQuantity = (text) => {
+    if (text === "add") {
+      setQuantity(quantity + 1);
+    } else {
+      if (quantity - 1 <= 0) {
+        alert("Cannot set quantity to 0");
+      } else {
+        setQuantity(quantity - 1);
+      }
+    }
+  };
   return (
     <>
       <Navbar />
       <div className="product">
-        <div
-          style={{
-            backgroundImage: "url(" + headphone + ")",
-          }}
-          className="productpicdiv"
-        >
-          <div className="productcardd2"></div>
-        </div>
         <div className="productd1">
           <h6 className="productcardh1">Lorem Ipsum</h6>
           <div className="productd1span1">
@@ -90,11 +99,37 @@ const Product = () => {
           <div style={{ marginTop: "20px" }} className="line"></div>
 
           <div className="productd2">
-            <button className="productd2btn">Add to Cart</button>
-            <div className="productd2totaldiv">
-              <p className="productd2totalp">Total: $123</p>
+            <div className="productd2quandiv">
+              <p className="productd2quanp">Quantity: </p>
+              <AddIcon
+                sx={
+                  {
+                    //   color: primarycolor,
+                  }
+                }
+                onClick={() => handleQuantity("add")}
+              />
+              <p className="productd2quannumber"> {quantity} </p>
+
+              <RemoveIcon
+                sx={
+                  {
+                    //   color: primarycolor,
+                  }
+                }
+                onClick={() => handleQuantity("remove")}
+              />
             </div>
+            <button className="productd2btn">Add to Cart</button>
           </div>
+        </div>
+        <div
+          style={{
+            backgroundImage: "url(" + headphone + ")",
+          }}
+          className="productpicdiv"
+        >
+          <div className="productcardd2"></div>
         </div>
       </div>
       <div className="productcarousel">
