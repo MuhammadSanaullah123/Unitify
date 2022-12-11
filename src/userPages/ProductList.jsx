@@ -144,12 +144,13 @@ const ProductList = () => {
       <Navbar />
       <div className="productlist">
         <div className="productlistd1">
-          <FormControl fullWidth>
+          <FormControl className="productlistd1form">
             <Select
               value={price}
               onChange={handleChange}
               displayEmpty
               inputProps={{ "aria-label": "Without label" }}
+              className="productlistmenuitem"
             >
               <MenuItem value="">
                 <p style={{ margin: "0" }}>None</p>

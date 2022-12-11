@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 //assets
 import electronics from "./../assets/electronics.jpg";
@@ -18,7 +18,7 @@ import ProductCard from "../components/ProductCard/ProductCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Typed from "react-typed";
-
+import Cookies from "universal-cookie";
 //mui
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -63,6 +63,9 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
 };
 
 const Home = () => {
+  const [cart] = useState([]);
+  const cookies = new Cookies();
+  cookies.set("cart", cart, { path: "/" });
   return (
     <>
       <Navbar />

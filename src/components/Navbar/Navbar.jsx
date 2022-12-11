@@ -7,6 +7,8 @@ import "./Navbar.scss";
 import CartProduct from "../CartProduct/CartProduct";
 //assets
 import logo from "../../assets/logo.png";
+//others
+import Cookies from "universal-cookie";
 
 //mui
 import { styled, alpha } from "@mui/material/styles";
@@ -67,8 +69,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const cookies = new Cookies();
+  const [cart] = useState(cookies.get("cart"));
+  const [totalPrice, settotalPrice] = useState(0);
 
+  const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -105,13 +110,14 @@ const Navbar = () => {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "35%",
-    height: "600px",
+    height: "auto",
+    maxHeight: "600px",
     background: "#ffffff",
-    border: `1px solid ${primarycolor[0]}`,
-    borderRadius: "6px",
+    border: `2px solid ${primarycolor[0]}`,
+    borderRadius: "20px",
     display: "flex",
     flexDirection: "column",
-    padding: "10px",
+    padding: "15px",
     overflowY: "auto",
     overflowX: "hidden",
   };
@@ -203,6 +209,17 @@ const Navbar = () => {
       );
     }
   }, []);
+
+  useEffect(() => {
+    let price = 0;
+    cart.forEach((element) => {
+      price = price + element.itemprice * element.itemquantity;
+    });
+    settotalPrice(price);
+
+    console.log(totalPrice);
+  }, [cart, totalPrice]);
+
   return (
     <>
       <div
@@ -268,10 +285,18 @@ const Navbar = () => {
                   />
                 </IconButton>
                 <Modal open={open} onClose={handleClose}>
-                  <Box sx={style}>
-                    {[...Array(6)].map((element, index) => (
+                  <Box className="CartBox" sx={style}>
+                    {/*  {[...Array(6)].map((element, index) => (
                       <CartProduct key={index} />
+                    ))} */}
+
+                    {cart.map((item, index) => (
+                      <CartProduct item={item} key={index} />
                     ))}
+                    <div className="cartproductd3">
+                      <p className="cartproductp2">Total </p>
+                      <p className="cartproductp3">${totalPrice}</p>
+                    </div>
                     <Link to="/checkout" style={{ textAlign: "center" }}>
                       <button className="cartcheckoutbtn">CheckOut</button>
                     </Link>

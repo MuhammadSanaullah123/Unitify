@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //assets
 import headphone from "./../assets/headphone.jpg";
@@ -11,7 +11,8 @@ import ProductCard from "../components/ProductCard/ProductCard";
 //others
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import { v4 as uuid } from "uuid";
+import Cookies from "universal-cookie";
 //mui
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -62,26 +63,52 @@ const Product = () => {
   /*   let primarycolor = useState(
     getComputedStyle(document.documentElement).getPropertyValue(`--primary`) //getting value of primary var from css
   ); */
+  const cookies = new Cookies();
+  const [name] = useState("Lorem Ipsum");
+  const [id] = useState(uuid());
   const [quantity, setQuantity] = useState(1);
+  const [price] = useState(100);
+
+  const [cart, setCart] = useState(cookies.get("cart"));
+  //const [cart, setCart] = useState([]);
+
   const handleQuantity = (text) => {
     if (text === "add") {
       setQuantity(quantity + 1);
     } else {
-      if (quantity - 1 <= 0) {
-        alert("Cannot set quantity to 0");
-      } else {
+      if (quantity - 1 !== 0) {
         setQuantity(quantity - 1);
       }
     }
   };
+
+  const Add = () => {
+    setCart([
+      ...cart,
+      {
+        itemname: name,
+        itemid: id,
+        itemprice: price,
+        itemquantity: quantity,
+      },
+    ]);
+    window.location.reload(false);
+  };
+  useEffect(() => {
+    cookies.set("cart", cart, { path: "/" });
+  });
+
+  console.log("cart array is");
+  console.log(cart);
+
   return (
     <>
       <Navbar />
       <div className="product">
         <div className="productd1">
-          <h6 className="productcardh1">Lorem Ipsum</h6>
+          <h6 className="productcardh1">{name}</h6>
           <div className="productd1span1">
-            <p className="productcardp1">Price: $12</p>
+            <p className="productcardp1">Price: ${price}</p>
           </div>
           <div style={{ marginTop: "20px" }} className="line"></div>
           <div className="productcarddespdiv">
@@ -102,25 +129,23 @@ const Product = () => {
             <div className="productd2quandiv">
               <p className="productd2quanp">Quantity: </p>
               <AddIcon
-                sx={
-                  {
-                    //   color: primarycolor,
-                  }
-                }
+                sx={{
+                  cursor: "pointer",
+                }}
                 onClick={() => handleQuantity("add")}
               />
               <p className="productd2quannumber"> {quantity} </p>
 
               <RemoveIcon
-                sx={
-                  {
-                    //   color: primarycolor,
-                  }
-                }
+                sx={{
+                  cursor: "pointer",
+                }}
                 onClick={() => handleQuantity("remove")}
               />
             </div>
-            <button className="productd2btn">Add to Cart</button>
+            <button onClick={Add} className="productd2btn">
+              Add to Cart
+            </button>
           </div>
         </div>
         <div
