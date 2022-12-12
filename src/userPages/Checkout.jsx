@@ -13,26 +13,34 @@ import plane from "./../assets/plane.svg";
 import Cookies from "universal-cookie";
 
 //mui
+import DeleteIcon from "@mui/icons-material/Delete";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 const Checkout = () => {
   const cookies = new Cookies();
   const [cart] = useState(cookies.get("cart"));
   const [totalPrice, settotalPrice] = useState(0);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+  const [addresses, setAddresses] = useState([]);
+  const [address, setAddress] = useState();
+  const [FinalAddress, setFinalAddress] = useState();
+  const [FinalAddressIndex, setFinalAddressIndex] = useState();
+
+  console.log("FinalAddress");
+  console.log(FinalAddress);
   const [billing, setBilling] = useState("");
   const [cvc, setCvc] = useState("");
   const [crypto, setCrypto] = useState("");
 
   const [open, setOpen] = useState(false);
+  const [openaddress, setOpenAddress] = useState(false);
+
   const handleOpen = () => {
     if (crypto === "") {
       alert("Select one payment method!");
@@ -42,13 +50,28 @@ const Checkout = () => {
     }
   };
 
+  const handleOpenAddress = () => {
+    setOpenAddress(true);
+  };
   const handleClose = () => setOpen(false);
+  const handleCloseAddress = () => setOpenAddress(false);
+
   let redirect_Page = () => {
     let tID = setTimeout(function () {
       window.location.href = "http://localhost:3000/thankyou";
       window.clearTimeout(tID); // clear time out.
     }, 3000);
   };
+  const Submit = () => {
+    setAddresses([...addresses, address]);
+    handleCloseAddress();
+  };
+  const Remove = (index) => {
+    var array = [...addresses];
+    array.splice(index, 1);
+    setAddresses(array);
+  };
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -61,14 +84,24 @@ const Checkout = () => {
     display: "flex",
     flexDirection: "column",
   };
+  const styleaddress = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "650px",
+    height: "200px",
+    borderRadius: "10px",
+    display: "flex",
+    flexDirection: "column",
+    padding: "10px",
+  };
   useEffect(() => {
     let price = 0;
     cart.forEach((element) => {
       price = price + element.itemprice * element.itemquantity;
     });
     settotalPrice(price);
-
-    console.log(totalPrice);
   }, [cart, totalPrice]);
   return (
     <>
@@ -99,23 +132,71 @@ const Checkout = () => {
               />
             </div>
           </div>
+          <h1 className="checkoutinfoh1">Select Address</h1>
           <div className="checkoutinfod2">
-            <p
-              style={{
-                width: "95%",
-                textAlign: "start",
-                marginTop: "0",
-              }}
-              className="checkoutinfolabel"
+            {addresses.map((addrs, index) => (
+              <>
+                <p
+                  style={{
+                    width: "95%",
+                    textAlign: "start",
+                    marginTop: "0",
+                  }}
+                  className="checkoutinfolabel"
+                >
+                  Address #{index + 1}
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    margin: "0 0 10px 0",
+                    alignItems: "center",
+                  }}
+                >
+                  <button
+                    className={`${
+                      index === FinalAddressIndex
+                        ? "addressreadonlybtnactive"
+                        : "addressreadonlybtn"
+                    }`}
+                    onClick={(e) => {
+                      setFinalAddress(e.target.innerText);
+                      setFinalAddressIndex(index);
+                    }}
+                  >
+                    {addrs}
+                  </button>
+
+                  <DeleteIcon
+                    onClick={() => Remove(index)}
+                    className="deleteicon"
+                  />
+                </div>
+              </>
+            ))}
+            <span onClick={handleOpenAddress} className="checkoutinfod2s1">
+              <AddCircleOutlineOutlinedIcon className="addicon" />
+              <p className="checkoutinfod2p1">Add Address</p>
+            </span>
+            <Modal
+              open={openaddress}
+              onClose={handleCloseAddress}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
             >
-              Address
-            </p>
-            <TextField
-              className="filled-basic3"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              variant="filled"
-            />
+              <Box className="addressBox" sx={styleaddress}>
+                <textarea
+                  className="addressBoxinput"
+                  placeholder="Write your address here..."
+                  type="text"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+                <button onClick={Submit} className="addressBoxbtn">
+                  Submit
+                </button>
+              </Box>
+            </Modal>
           </div>
           <h1
             style={{
@@ -144,7 +225,7 @@ const Checkout = () => {
 
             <div
               style={{
-                width: "49%",
+                width: "45%",
               }}
               className={`checkoutinfodr ${
                 crypto ? "checkoutinfodisable" : ""
@@ -162,7 +243,7 @@ const Checkout = () => {
 
             <div
               style={{
-                width: "49%",
+                width: "45%",
               }}
               className={`checkoutinfodr ${
                 crypto ? "checkoutinfodisable" : ""
@@ -197,7 +278,7 @@ const Checkout = () => {
 
             <div
               style={{
-                width: "49%",
+                width: "45%",
               }}
               className={`checkoutinfodr ${
                 crypto === false ? "checkoutinfodisable" : ""
@@ -215,7 +296,7 @@ const Checkout = () => {
 
             <div
               style={{
-                width: "49%",
+                width: "45%",
               }}
               className={`checkoutinfodr ${
                 crypto === false ? "checkoutinfodisable" : ""

@@ -1725,17 +1725,75 @@
       font-weight: 600;
       font-size: 16px;
       color: #494949;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
+
     .checkoutinfod2 {
       display: flex;
       flex-direction: column;
-
-      margin-top: -15px;
+      margin-top: 15px;
       width: 95%;
       align-self: center;
+      max-height: 250px;
+      overflow-y: auto;
+
       @media (max-width: 600px) {
         margin-top: 10px;
+      }
+      .checkoutinfod2s1 {
+        display: flex;
+        align-items: center;
+        .addicon {
+          color: var(--primary);
+          font-size: 2.2rem;
+          cursor: pointer;
+        }
+        .checkoutinfod2p1 {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          color: var(--primary);
+          margin: 0 0 0 10px;
+        }
+      }
+      .deleteicon {
+        color: var(--primary);
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .addressreadonlybtn {
+        height: 50px;
+        font-family: "Inter";
+        font-size: 18px;
+        background: none;
+        border: 1px solid darkgrey;
+        border-radius: 8px;
+        margin-right: 5px;
+        text-align: left;
+        overflow-y: auto;
+        cursor: pointer;
+
+        @media (max-width: 480px) {
+          height: 100px;
+        }
+      }
+      .addressreadonlybtnactive {
+        height: 50px;
+        font-family: "Inter";
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--primary);
+        background: none;
+        border: 2px solid var(--primary);
+        border-radius: 8px;
+        margin-right: 5px;
+        text-align: left;
+        overflow-y: auto;
+        cursor: pointer;
+        @media (max-width: 480px) {
+          height: 100px;
+        }
       }
     }
     .filled-basic3 {
@@ -1853,6 +1911,40 @@
   }
   @media (max-width: 490px) {
     height: auto !important;
+  }
+}
+.addressBox {
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--primary);
+  @media (max-width: 768px) {
+    width: 85% !important;
+  }
+  .addressBoxinput {
+    width: 98%;
+    height: 120px;
+    border-radius: 8px;
+    border: 2px solid darkgray;
+  }
+  textarea {
+    font-family: "Inter";
+    font-size: 20px;
+    padding: 5px;
+  }
+  .addressBoxbtn {
+    align-self: flex-end;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: var(--primary);
+    border: 0;
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
   }
 }
 /*---------------------------- CSS CODE END FOR USER:Checkout PAGE--------------------------*/

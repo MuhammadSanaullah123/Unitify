@@ -216,8 +216,6 @@ const Navbar = () => {
       price = price + element.itemprice * element.itemquantity;
     });
     settotalPrice(price);
-
-    console.log(totalPrice);
   }, [cart, totalPrice]);
 
   return (
