@@ -131,6 +131,8 @@ const Product = () => {
               <AddIcon
                 sx={{
                   cursor: "pointer",
+                  border: "1px solid",
+                  borderRadius: "8px",
                 }}
                 onClick={() => handleQuantity("add")}
               />
@@ -139,6 +141,8 @@ const Product = () => {
               <RemoveIcon
                 sx={{
                   cursor: "pointer",
+                  border: "1px solid",
+                  borderRadius: "8px",
                 }}
                 onClick={() => handleQuantity("remove")}
               />

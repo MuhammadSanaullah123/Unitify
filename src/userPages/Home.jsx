@@ -82,7 +82,7 @@ const Home = () => {
             />
             <br />
             <Typed
-              strings={["with the digital coin.", "with your card."]}
+              strings={["with the digital coin.", "with your visa card."]}
               typeSpeed={30}
               backSpeed={40}
               startDelay={1800}
