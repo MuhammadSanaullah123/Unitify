@@ -1,6 +1,8 @@
 :root {
-  --primary: #e94b41; //primary color
+  --primary: #ff5e00; //primary color
   --secondary: #2683ff; // secondary color
+  max-width: 1600px;
+  margin: 0 auto;
 }
 /*---------------------------- CSS CODE START FOR USER:LOGIN PAGE----------------- */
 /***********************************************************************************/
@@ -459,7 +461,8 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 16px;
-        color: var(--secondary);
+        color: rgb(255, 0, 0);
+
         margin: 0 0 10px 0;
       }
     }
@@ -531,7 +534,8 @@
   height: 48px;
   background: var(--primary);
   border-radius: 3px;
-  border: 1px solid #ffffff;
+  border: 0;
+
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
@@ -719,6 +723,7 @@
           font-weight: 500;
           align-self: center;
           margin: 0 0 15px 0;
+          color: #000;
         }
         .homed6img {
           min-width: 400px;
@@ -743,7 +748,7 @@
       .homed6:hover {
         transform: scale(1.05);
         opacity: 0.85;
-        border: 2px solid var(--primary);
+        //border: 2px solid var(--primary);
         transition: 0.1s;
       }
     }
@@ -1354,6 +1359,13 @@
   }
 }
 .CartBox {
+  .CartBoxh1 {
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 0;
+  }
   @media (max-width: 950px) {
     width: 50% !important;
   }

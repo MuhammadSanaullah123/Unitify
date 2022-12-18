@@ -284,10 +284,7 @@ const Navbar = () => {
                 </IconButton>
                 <Modal open={open} onClose={handleClose}>
                   <Box className="CartBox" sx={style}>
-                    {/*  {[...Array(6)].map((element, index) => (
-                      <CartProduct key={index} />
-                    ))} */}
-
+                    <h1 className="CartBoxh1">Cart</h1>
                     {cart.map((item, index) => (
                       <CartProduct item={item} key={index} />
                     ))}
