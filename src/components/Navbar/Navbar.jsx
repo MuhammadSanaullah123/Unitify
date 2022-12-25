@@ -165,6 +165,17 @@ const Navbar = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {/*    <MenuItem>
+        <Link to="/home" className="linknavmobile">
+          Home
+        </Link>
+      </MenuItem>
+      <MenuItem>
+        <Link to="/productlist" className="linknavmobile">
+          Product List
+        </Link>
+      </MenuItem> */}
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -175,7 +186,9 @@ const Navbar = () => {
         >
           <AccountCircle className="navicons" sx={{ fontSize: "30px" }} />
         </IconButton>
-        <p style={{ fontFamily: "Inter" }}>Profile</p>
+        <p style={{ fontFamily: "Inter", fontSize: "20px", margin: "0" }}>
+          Profile
+        </p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -188,7 +201,9 @@ const Navbar = () => {
             sx={{ fontSize: "30px" }}
           />
         </IconButton>
-        <p style={{ fontFamily: "Inter" }}>Wallet</p>
+        <p style={{ fontFamily: "Inter", fontSize: "20px", margin: "0" }}>
+          Wallet
+        </p>
       </MenuItem>
       <MenuItem onClick={handleOpen}>
         <IconButton
@@ -198,7 +213,9 @@ const Navbar = () => {
         >
           <ShoppingCartIcon className="navicons" sx={{ fontSize: "30px" }} />
         </IconButton>
-        <p style={{ fontFamily: "Inter" }}>Cart</p>
+        <p style={{ fontFamily: "Inter", fontSize: "20px", margin: "0" }}>
+          Cart
+        </p>
       </MenuItem>
     </Menu>
   );
@@ -229,11 +246,21 @@ const Navbar = () => {
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar>
-              <img
-                style={{ width: "120px", height: "40px" }}
-                src={logo}
-                alt=""
-              />
+              <Link to="/home">
+                <img
+                  style={{ width: "120px", height: "40px" }}
+                  src={logo}
+                  alt=""
+                />
+              </Link>
+              {/* 
+              <Link to="/home" className="linknav">
+                Home
+              </Link>
+              <Link to="/productlist" className="linknav">
+                Product List
+              </Link>
+ */}
               <Search>
                 <SearchIconWrapper>
                   <SearchIcon className="navicons" />

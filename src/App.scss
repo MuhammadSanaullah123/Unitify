@@ -858,13 +858,15 @@
       }
     }
     .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root,
-    .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+    .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+    .css-1636szt {
       color: var(--primary);
       opacity: 0.7;
       font-family: "Inter";
     }
-    .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
-      border-radius: 10px;
+    .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+    .css-fvipm8 {
+      border-radius: 10px !important;
       border: 1px solid var(--primary);
     }
     .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused
@@ -872,7 +874,7 @@
       border-color: transparent;
     }
     .productlistmenuitem {
-      color: var(--primary);
+      color: var(--primary); 
     }
   }
   .productlistd2 {

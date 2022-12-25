@@ -61,7 +61,8 @@
         margin-bottom: 10px;
         box-shadow: none;
       }
-      .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+      .css-1elwnq4-MuiPaper-root-MuiAccordion-root:before,
+      .css-67l5gl::before {
         display: none;
       }
       .css-o4b71y-MuiAccordionSummary-content,
@@ -161,7 +162,8 @@
       text-decoration: none;
     }
   }
-  .css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+  .css-1elwnq4-MuiPaper-root-MuiAccordion-root,
+  .css-67l5gl {
     background-color: transparent;
   }
   .css-i4bv87-MuiSvgIcon-root {
